@@ -12,7 +12,7 @@ public class infiniteArrray {
         int end=1;
         while(target>arr[end])
         {
-            int newS=end+1;
+            int newS=end+1;-
             end=end+(end- start +1)*2;
             start=newS;
         }
