@@ -1,6 +1,6 @@
 package BinarySearchLeetCode;
 
-public class peakIndexInMountainArray {
+public class peakIndexInMountain {
     public static void main(String[] args) {
 
     }
@@ -13,7 +13,7 @@ public class peakIndexInMountainArray {
             int mid=start+(end-start)/2;
             if (arr[mid]>arr[mid+1])
             {
-                    end=mid;
+                end=mid;
             }
             else{
                 start=mid+1;
@@ -23,3 +23,5 @@ public class peakIndexInMountainArray {
         return start;
     }
 }
+
+
