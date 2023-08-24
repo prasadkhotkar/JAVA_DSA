@@ -2,7 +2,7 @@ package Recursion;
 
 public class NTo1 {
     public static void main(String[] args) {
-        reverse(10);
+        both(5);
     }
     static void Nto1(int n)
     {
@@ -21,6 +21,16 @@ public class NTo1 {
             return;
         }
         reverse(n-1);
+        System.out.println(n);
+    }
+    static void both(int n)
+    {
+        if (n==0)
+        {
+            return;
+        }
+        System.out.println(n);
+        both(n-1);
         System.out.println(n);
     }
 }
