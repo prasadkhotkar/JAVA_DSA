@@ -1,17 +1,38 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+import java.util.Scanner;
+
 public class Main {
-    public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+    public static void main(String[] args) throws AWTException, InterruptedException {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter the msg");
+        String msg=sc.nextLine();
+        System.out.println("how many times you want to send the msg");
+        int size=sc.nextInt();
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        StringSelection StringSelection=new StringSelection(msg);
+        Clipboard clipboard= Toolkit.getDefaultToolkit().getSystemClipboard();
+        clipboard.setContents(StringSelection,null);
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        Thread.sleep(3000);
+        Robot robot=new Robot();
+        for (int i=1;i<=size;i++)
+        {
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_V);
+
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            robot.keyRelease(KeyEvent.VK_V);
+
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            robot.keyRelease(KeyEvent.VK_V);
+            Thread.sleep(1000);
+            System.out.println();
         }
+
+
+
     }
-}
+    }
